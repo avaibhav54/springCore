@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context=" http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+
+xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd 
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+">
+<util:list list-class="java.util.LinkedList" id="mybe" >
+<value>vaibhav</value>
+<value>chcha</value>
+<value>munni</value>
+<value>tharki</value>
+</util:list>
+	<util:map id="sbjct" map-class="java.util.HashMap">
+		<entry key="maths" value="500"></entry>
+		<entry key="physics" value="2000"></entry></util:map>
+	<util:properties id="dbconfig">
+		<prop key="driver">java.mysql.driver</prop>
+		<prop key="uname">vaibhav</prop>
+		<prop key="passwrd">vaibhav123</prop>
+		<prop key="url">com.mysql</prop></util:properties>
+
+	<bean class="com.springcore.standalone.person" name="emp1"
+		autowire="default">
+
+
+	</bean>
+	<bean class="com.springcore.standalone.person" name="emp2">
+		<property name="fees" ref="sbjct"></property>
+		<property name="name" ref="mybe"></property>
+		<property name="property" ref="dbconfig"></property></bean>
+	
+
+
+</beans>
